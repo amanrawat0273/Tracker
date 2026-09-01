@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amex Java Backend Interview OS</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--text:#172033;--muted:#68738a;--accent:#1769ff;--accent2:#7c3aed;--ok:#16a34a;--warn:#f59e0b;--line:#e7ebf2}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,#101b3d,#1769ff 55%,#7c3aed);color:#fff;padding:34px 22px}
+header .wrap,.wrap{max-width:1150px;margin:auto}h1{font-size:34px;margin:0 0 8px}.hero{max-width:760px;color:#eaf0ff}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);padding:10px 12px;overflow:auto;white-space:nowrap}
+nav a{display:inline-block;margin-right:16px;color:#31517f;text-decoration:none;font-weight:700;font-size:14px}
+main{max-width:1150px;margin:22px auto;padding:0 14px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 6px 22px #18264a0b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.stat{padding:15px;border-radius:13px;background:linear-gradient(135deg,#eef5ff,#f6f1ff)}.num{font-size:28px;font-weight:800}.label{font-size:13px;color:var(--muted)}
+.progress{height:20px;background:#e8edf5;border-radius:20px;overflow:hidden;margin:12px 0}.fill{height:100%;width:0;background:linear-gradient(90deg,#1769ff,#7c3aed);transition:.25s}
+h2{margin-top:0}.week{border-left:6px solid var(--accent)}.week h2{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.task{display:flex;gap:10px;padding:11px 5px;border-top:1px solid var(--line);align-items:flex-start}.task input{width:19px;height:19px;margin-top:2px}.task.done .title{text-decoration:line-through;color:#8993a7}
+.tag{display:inline-block;font-size:11px;padding:3px 7px;border-radius:99px;background:#edf2ff;color:#315dcc;margin-left:6px}.resource{font-size:13px;color:#315dcc;margin-top:4px}.resource a{color:inherit}
+details{margin-top:8px;background:#fafbfe;padding:10px;border-radius:10px}summary{cursor:pointer;font-weight:700}
+button{border:0;border-radius:10px;padding:10px 14px;margin:4px;background:#172033;color:#fff;cursor:pointer;font-weight:700}button.alt{background:#e8edf5;color:#172033}
+input[type=number]{padding:7px;width:75px;border:1px solid var(--line);border-radius:7px}textarea{width:100%;min-height:110px;border:1px solid var(--line);border-radius:10px;padding:10px}
+.company{padding:13px;border:1px solid var(--line);border-radius:12px;margin:9px 0}.company b{font-size:16px}.status{float:right}.small{font-size:13px;color:var(--muted)}
+footer{padding:25px;text-align:center;color:var(--muted)}
+@media(max-width:600px){h1{font-size:27px}.card{padding:15px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🚀 Amex Java Backend Interview OS</h1>
+<p class="hero">A practical 13-week tracker for a 3-YOE Java/Spring Batch backend engineer. Covers DSA, Core Java, concurrency, Spring, Batch, SQL, microservices, Kafka, Redis, system design, LLD, behavioral and job-switch execution.</p>
+</div></header>
+<nav><div class="wrap">
+<a href="#dashboard">Dashboard</a><a href="#weeks">13 Weeks</a><a href="#companies">Companies</a><a href="#interviews">Interview Tracker</a><a href="#backup">Backup</a>
+</div></nav>
+<main>
+<section id="dashboard" class="card">
+<h2>📊 Dashboard</h2>
+<div class="grid">
+<div class="stat"><div class="num" id="pct">0%</div><div class="label">Overall completion</div></div>
+<div class="stat"><div class="num" id="done">0</div><div class="label">Tasks done</div></div>
+<div class="stat"><div class="num" id="left">0</div><div class="label">Tasks remaining</div></div>
+<div class="stat"><div class="num" id="hours">0</div><div class="label">Estimated hours</div></div>
+</div>
+<div class="progress"><div class="fill" id="fill"></div></div>
+<p class="small">Suggested sustainable pace: ~4–6 hours/week. Your actual progress is based only on checked tasks.</p>
+</section>
+
+<section class="card">
+<h2>🎯 Target profile</h2>
+<div class="grid">
+<div><b>Experience</b><br>~3 YOE</div><div><b>Core</b><br>Java + Spring + Spring Batch</div>
+<div><b>Target</b><br>Amex + similar backend roles</div><div><b>Locations</b><br>Delhi NCR / Gurgaon / Noida</div>
+</div>
+</section>
+
+<section id="weeks"></section>
+
+<section id="companies" class="card">
+<h2>🏢 Target Company Watchlist</h2>
+<p class="small">Use these official career pages to check current openings. CTC varies by level, location and offer structure; verify each live posting rather than relying on estimates.</p>
+<div class="company"> <b>American Express</b><span class="status">🎯 Primary</span><br><a href="https://www.americanexpress.com/en-in/careers/" target="_blank">Official careers →</a></div>
+<div class="company"> <b>UKG</b><span class="status">🎯 Primary</span><br><a href="https://www.ukg.com/careers" target="_blank">Official careers →</a></div>
+<div class="company"> <b>Optum / UnitedHealth Group</b><span class="status">🎯 Primary</span><br><a href="https://careers.unitedhealthgroup.com/" target="_blank">Official careers →</a></div>
+<div class="company"> <b>NatWest Group</b><span class="status">🎯 Primary</span><br><a href="https://jobs.natwestgroup.com/" target="_blank">Official careers →</a></div>
+<div class="company"> <b>Goldman Sachs</b><span class="status">🔥 Stretch</span><br><a href="https://www.goldmansachs.com/careers/" target="_blank">Official careers →</a></div>
+<div class="company"> <b>Adobe</b><span class="status">🔥 Stretch</span><br><a href="https://careers.adobe.com/" target="_blank">Official careers →</a></div>
+<div class="company"> <b>Walmart Global Tech</b><span class="status">🔥 Stretch</span><br><a href="https://careers.walmart.com/technology" target="_blank">Official careers →</a></div>
+</section>
+
+<section id="interviews" class="card">
+<h2>🧑‍💻 Application & Interview Tracker</h2>
+<p>Applications <input id="apps" type="number" min="0" value="0"> &nbsp; Interviews <input id="ints" type="number" min="0" value="0"> &nbsp; Offers <input id="offers" type="number" min="0" value="0"></p>
+<h3>Interview notes</h3><textarea id="notes" placeholder="Company, role, round, questions, feedback, next steps..."></textarea>
+</section>
+
+<section id="backup" class="card">
+<h2>☁️ GitHub Sync</h2>
+<p>Connect this tracker to your GitHub repository. Your progress is stored in <b>progress.json</b>, so you can access it from anywhere.</p>
+<div class="grid">
+<div><b>GitHub username</b><br><input id="ghUser" placeholder="your-username" style="padding:8px;width:100%;margin-top:6px"></div>
+<div><b>Repository</b><br><input id="ghRepo" placeholder="amex-interview-tracker" style="padding:8px;width:100%;margin-top:6px"></div>
+<div><b>Branch</b><br><input id="ghBranch" value="main" style="padding:8px;width:100%;margin-top:6px"></div>
+</div>
+<p><b>GitHub token:</b> <span class="small">Use a fine-grained token with access only to this repository. It is saved only in this browser's local storage and is never written into the HTML.</span></p>
+<input id="ghToken" type="password" placeholder="github_pat_..." style="padding:9px;width:100%;max-width:600px">
+<br>
+<button onclick="saveGithubSettings()">Save GitHub Settings</button>
+<button onclick="loadFromGithub()">⬇️ Pull from GitHub</button>
+<button onclick="pushToGithub()">⬆️ Save to GitHub</button>
+<p id="ghStatus" class="small">GitHub not connected.</p>
+<hr>
+<h3>💾 Local Backup</h3>
+<button onclick="exportData()">Export Backup</button>
+<button class="alt" onclick="importData()">Import Backup</button>
+<button class="alt" onclick="resetAll()">Reset All</button>
+<p class="small">Local progress is also saved automatically in this browser.</p>
+</section>
+</main>
+<footer>Amex Java Backend Interview OS • Start date: 29 Aug 2026</footer>
+
+<script>
+const W=[
+["Week 1 — Java + DSA Foundation",[
+["DSA","Two Sum","https://leetcode.com/problems/two-sum/","Solve without solution; explain O(n) HashMap approach."],
+["DSA","Reverse Linked List","https://leetcode.com/problems/reverse-linked-list/","Iterative first; recursive optional."],
+["Java","HashMap internals","https://www.geeksforgeeks.org/internal-working-of-hashmap-in-java/","put/get, buckets, collisions, load factor, resize, treeification."],
+["Java","equals() vs hashCode()","https://www.baeldung.com/java-equals-hashcode-contracts","Know the contract and why both matter."],
+["System Design","Cache basics","https://github.com/donnemartin/system-design-primer","Cache-aside, TTL, eviction, cache hit/miss."]]],
+["Week 2 — Collections + Sliding Window",[
+["DSA","3Sum","https://leetcode.com/problems/3sum/","Sort + two pointers; deduplication."],
+["DSA","Linked List Cycle","https://leetcode.com/problems/linked-list-cycle/","Floyd slow/fast pointers."],
+["DSA","Longest Substring Without Repeating Characters","https://leetcode.com/problems/longest-substring-without-repeating-characters/","Sliding window + HashMap/array."],
+["DSA","Fruit Into Baskets","https://leetcode.com/problems/fruit-into-baskets/","Sliding window with at most 2 types."],
+["Java","ConcurrentHashMap","https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html","Thread safety, CAS/bin locking, null restriction."],
+["Java","Fail-fast vs fail-safe","https://www.geeksforgeeks.org/fail-fast-fail-safe-iterators-java/","Iterator behavior and examples."],
+["Java","Immutable classes","https://www.baeldung.com/java-immutable-object","Final fields, defensive copies, no setters."]]],
+["Week 3 — Trees + Concurrency",[
+["DSA","Binary Tree Level Order Traversal","https://leetcode.com/problems/binary-tree-level-order-traversal/","BFS using queue."],
+["DSA","Lowest Common Ancestor","https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/","Recursive tree reasoning."],
+["DSA","Left View of Binary Tree","https://www.geeksforgeeks.org/print-left-view-binary-tree/","BFS/DFS."],
+["DSA","Number of Islands","https://leetcode.com/problems/number-of-islands/","BFS/DFS grid traversal."],
+["Java","Thread lifecycle","https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.State.html","Know states and transitions."],
+["Java","synchronized","https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html","Monitor/lock basics; synchronized method vs block."],
+["Java","volatile","https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/volatile.html","Visibility and happens-before; not atomicity."],
+["Java","Deadlock","https://docs.oracle.com/javase/tutorial/essential/concurrency/deadlock.html","Conditions, prevention and diagnosis."],
+["Spring Batch","Partitioning","https://docs.spring.io/spring-batch/reference/scalability.html","Partition a large workload across workers."],
+["Spring Batch","Parallel steps","https://docs.spring.io/spring-batch/reference/scalability.html","Understand concurrent execution and thread pools."]]],
+["Week 4 — Java 8 + Executors + SQL",[
+["DSA","Course Schedule","https://leetcode.com/problems/course-schedule/","Topological sort / cycle detection."],
+["DSA","Coin Change","https://leetcode.com/problems/coin-change/","1D DP."],
+["DSA","Climbing Stairs","https://leetcode.com/problems/climbing-stairs/","Basic DP."],
+["DSA","House Robber","https://leetcode.com/problems/house-robber/","State transition."],
+["Java","Streams","https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html","map/filter/reduce and lazy evaluation."],
+["Java","flatMap","https://www.baeldung.com/java-flatten-stream-optional","Flatten nested structures."],
+["Java","groupingBy","https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Collectors.html","Grouping + downstream collectors."],
+["Java","Predicate / Consumer / Supplier","https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/package-summary.html","Know common functional interfaces."],
+["Java","ExecutorService","https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ExecutorService.html","Pools, submit, Future, shutdown."],
+["Java","CompletableFuture","https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/CompletableFuture.html","Async composition and exception handling."],
+["SQL","Window functions","https://www.postgresql.org/docs/current/tutorial-window.html","ROW_NUMBER, RANK, partition/order."]]],
+["Week 5 — Spring Boot + Backend Core",[
+["Spring","Dependency Injection","https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html","Constructor injection, IoC."],
+["Spring","Bean lifecycle","https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html","Creation, initialization, destruction."],
+["Spring","Profiles/configuration","https://docs.spring.io/spring-boot/reference/features/profiles.html","Environment-specific configuration."],
+["REST","HTTP methods","https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods","GET/POST/PUT/PATCH/DELETE semantics."],
+["REST","Idempotency","https://developer.mozilla.org/en-US/docs/Glossary/Idempotent","Why retries can be safe."],
+["REST","HTTP status codes","https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status","2xx/4xx/5xx essentials."],
+["DB","Transactions","https://www.postgresql.org/docs/current/tutorial-transactions.html","ACID and transaction boundaries."],
+["DB","Indexes","https://use-the-index-luke.com/","How indexes affect query performance."],
+["DB","CAP theorem","https://github.com/donnemartin/system-design-primer","Tradeoffs in distributed systems."],
+["Project","Employee CRUD REST API","","Implement with Spring Boot + SQL and add validation/error handling."]]],
+["Week 6 — Microservices + Kafka",[
+["Backend","API Gateway","https://microservices.io/patterns/apigateway.html","Routing, auth, aggregation."],
+["Backend","Service discovery","https://microservices.io/patterns/service-registry.html","Why services need discovery."],
+["Backend","Circuit breaker","https://martinfowler.com/bliki/CircuitBreaker.html","Failure isolation and states."],
+["Backend","Feign/service calls","https://docs.spring.io/spring-cloud-openfeign/reference/","Declarative HTTP clients."],
+["Kafka","Partitions","https://kafka.apache.org/documentation/","Parallelism and ordering."],
+["Kafka","Consumer groups","https://kafka.apache.org/documentation/","Scaling consumers."],
+["Kafka","Offsets","https://kafka.apache.org/documentation/","Commit/replay semantics."],
+["Kafka","Delivery semantics","https://kafka.apache.org/documentation/","At-most/at-least/exactly-once concepts."],
+["Project","Async notification service","","Spring Boot + Kafka producer/consumer + retry/error topic."]]],
+["Week 7 — Redis + Reliability",[
+["Redis","Cache-aside","https://redis.io/docs/latest/develop/clients/patterns/cache-aside/","Read-through logic implemented by application."],
+["Redis","TTL","https://redis.io/docs/latest/commands/expire/","Expiration and stale data."],
+["Redis","Eviction","https://redis.io/docs/latest/develop/reference/eviction/","Memory limits and policies."],
+["Backend","Retry + exponential backoff","https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/","Avoid retry storms."],
+["Backend","Idempotency keys","https://stripe.com/docs/api/idempotent_requests","Prevent duplicate operations."],
+["Backend","Timeouts","https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/","Timeout before retry."],
+["Design","Notification service","","Define API, queue, retries, deduplication and scaling."]]],
+["Week 8 — System Design",[
+["System Design","URL Shortener","https://github.com/donnemartin/system-design-primer","Requirements → APIs → DB → cache → scale."],
+["System Design","Rate Limiter","https://github.com/redis/redis-doc/blob/master/docs/manual/patterns/rate-limiting.md","Token bucket/sliding window concepts."],
+["System Design","DB schema design","https://github.com/donnemartin/system-design-primer","Keys, indexes, relationships."],
+["System Design","Caching strategy","https://github.com/donnemartin/system-design-primer","Cache placement, invalidation, TTL."],
+["System Design","Scaling basics","https://github.com/donnemartin/system-design-primer","Load balancer, horizontal scaling, queues."],
+["System Design","Availability vs consistency","https://github.com/donnemartin/system-design-primer","Explain tradeoffs, not slogans."]]],
+["Week 9 — Payment System",[
+["System Design","Payment gateway architecture","https://github.com/donnemartin/system-design-primer","Focus on financial transaction flow."],
+["System Design","Payment idempotency","https://stripe.com/docs/api/idempotent_requests","Duplicate prevention."],
+["System Design","Retries / duplicate prevention","https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/","Retry safely."],
+["System Design","Failure handling","","What if DB/Kafka/payment provider fails?"],
+["Project","Mini payment service","","Spring Boot + PostgreSQL; idempotency table + status transitions."],
+["Interview","Explain payment design aloud","","10-minute explanation without notes."]]],
+["Week 10 — LLD",[
+["LLD","Parking Lot","","Classes, interfaces, enums, allocation strategy."],
+["LLD","Notification service","","Channels, templates, providers."],
+["LLD","SOLID principles","https://www.baeldung.com/solid-principles","Explain each with Java examples."],
+["LLD","Factory pattern","https://refactoring.guru/design-patterns/factory-method","When and why."],
+["LLD","Strategy pattern","https://refactoring.guru/design-patterns/strategy","Swap algorithms/behaviors."],
+["LLD","Concurrency considerations","","Locks, thread safety, shared state."],
+["Interview","Draw UML/class design","","Practice explaining design decisions."]]],
+["Week 11 — Resume + Applications",[
+["Career","Update Java backend resume","","Use measurable impact; emphasize backend ownership."],
+["Career","Add measurable project impact","","Latency, volume, reliability, automation, defects, cost."],
+["Career","Update LinkedIn","","Headline + skills + impact."],
+["Career","Create Amex-focused resume","","Java/Spring/backend keywords."],
+["Career","Referral outreach","","Reach out to relevant engineers/recruiters."],
+["Career","Track 10 applications","","Record company, role, date, referral, status."]]],
+["Week 12 — Mock Interviews",[
+["Mock","DSA mock #1","","45-minute timed round."],
+["Mock","Java mock #1","","Collections + concurrency + Java 8."],
+["Mock","Spring/Backend mock #1","","Spring + REST + microservices."],
+["Mock","System Design mock #1","","URL shortener/payment."],
+["Behavioral","Why Amex?","","Prepare concise company-specific answer."],
+["Behavioral","Why leave current company?","","Positive, growth-oriented answer."],
+["Behavioral","Biggest technical challenge","","STAR story."],
+["Behavioral","Failure / disagreement story","","STAR story + learning."]]],
+["Week 13 — Interview Sprint",[
+["Mock","Full technical mock #1","","DSA + Java + backend."],
+["Mock","Full technical mock #2","","DSA + system design."],
+["Mock","System Design mock #2","","Payment / notification."],
+["Mock","Timed DSA round","","2 medium problems in interview conditions."],
+["Career","Apply to target companies","","Amex + similar NCR roles."],
+["Career","Follow up referrals","","Track responses."],
+["Career","Review weak areas","","Use your interview feedback."],
+["Career","Final resume review","","Tailor to each job description."]]]
+];
+
+const S=JSON.parse(localStorage.getItem("amexOS")||"{}");
+const key=(w,i)=>"w"+w+"_"+i;
+function render(){
+ let html="";
+ W.forEach((w,wi)=>{
+  const completed=w[1].filter((_,i)=>S[key(wi,i)]).length;
+  html+=`<section class="card week" id="week${wi+1}"><h2>📅 ${w[0]} <span class="tag">${completed}/${w[1].length}</span></h2>`;
+  w[1].forEach((t,i)=>{
+   const k=key(wi,i),c=!!S[k];
+   html+=`<div class="task ${c?"done":""}"><input type="checkbox" ${c?"checked":""} onchange="S['${k}']=this.checked;save();render()"><div><div class="title"><b>${t[0]}</b> — ${t[1]}</div>${t[2]?`<div class="resource">📚 <a href="${t[2]}" target="_blank">Study / practice resource</a></div>`:""}<details><summary>What to focus on</summary><div class="small">${t[3]||"Understand the concept, write a small Java example where applicable, and explain it aloud."}</div></details></div></div>`;
+  }); html+="</section>";
+ });
+ document.getElementById("weeks").innerHTML=html;
+ ["apps","ints","offers","notes"].forEach(id=>{document.getElementById(id).value=S[id]||"";document.getElementById(id).oninput=()=>{S[id]=document.getElementById(id).value;save()}});
+ update();
+}
+function update(){
+ let total=0,done=0;W.forEach((w,wi)=>w[1].forEach((_,i)=>{total++;if(S[key(wi,i)])done++}));
+ const p=Math.round(done/total*100);
+ document.getElementById("pct").textContent=p+"%";document.getElementById("fill").style.width=p+"%";
+ document.getElementById("done").textContent=done;document.getElementById("left").textContent=total-done;
+ document.getElementById("hours").textContent=Math.round(done*.5*10)/10;
+}
+function save(){localStorage.setItem("amexOS",JSON.stringify(S));update()}
+function exportData(){const b=new Blob([JSON.stringify(S,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="amex-java-interview-progress.json";a.click()}
+function importData(){const x=document.createElement("input");x.type="file";x.accept=".json";x.onchange=e=>{const r=new FileReader();r.onload=()=>{Object.assign(S,JSON.parse(r.result));save();render()};r.readAsText(e.target.files[0])};x.click()}
+function githubSettings(){
+ const saved=JSON.parse(localStorage.getItem("amexGitHub")||"{}");
+ return {
+  user:(document.getElementById("ghUser").value||saved.user||"").trim(),
+  repo:(document.getElementById("ghRepo").value||saved.repo||"").trim(),
+  branch:(document.getElementById("ghBranch").value||saved.branch||"main").trim(),
+  token:(document.getElementById("ghToken").value||saved.token||"").trim()
+ };
+}
+function saveGithubSettings(){
+ const g=githubSettings();
+ localStorage.setItem("amexGitHub",JSON.stringify(g));
+ setStatus("GitHub settings saved in this browser.");
+}
+function restoreGithubSettings(){
+ const g=JSON.parse(localStorage.getItem("amexGitHub")||"{}");
+ if(g.user)document.getElementById("ghUser").value=g.user;
+ if(g.repo)document.getElementById("ghRepo").value=g.repo;
+ if(g.branch)document.getElementById("ghBranch").value=g.branch;
+ if(g.token)document.getElementById("ghToken").value=g.token;
+}
+function setStatus(t){document.getElementById("ghStatus").textContent=t}
+function headers(g){
+ return {
+  "Authorization":"Bearer "+g.token,
+  "Accept":"application/vnd.github+json",
+  "X-GitHub-Api-Version":"2022-11-28",
+  "Content-Type":"application/json"
+ };
+}
+function utf8ToBase64(str){return btoa(unescape(encodeURIComponent(str)))}
+function base64ToUtf8(str){return decodeURIComponent(escape(atob(str.replace(/\n/g,""))))}
+function progressOnly(){
+ const copy={};
+ Object.keys(S).forEach(k=>copy[k]=S[k]);
+ return copy;
+}
+async function loadFromGithub(){
+ const g=githubSettings();
+ if(!g.user||!g.repo||!g.token){setStatus("Enter username, repository and token first.");return}
+ saveGithubSettings();
+ setStatus("Loading progress from GitHub...");
+ try{
+  const url=`https://api.github.com/repos/${encodeURIComponent(g.user)}/${encodeURIComponent(g.repo)}/contents/progress.json?ref=${encodeURIComponent(g.branch)}`;
+  const r=await fetch(url,{headers:headers(g)});
+  if(!r.ok)throw new Error(await r.text());
+  const data=await r.json();
+  const remote=JSON.parse(base64ToUtf8(data.content));
+  Object.keys(S).forEach(k=>delete S[k]);
+  Object.assign(S,remote);
+  localStorage.setItem("amexOS",JSON.stringify(S));
+  render();
+  setStatus("✅ Progress pulled from GitHub.");
+ }catch(e){setStatus("❌ Pull failed: "+e.message.slice(0,180))}
+}
+async function pushToGithub(){
+ const g=githubSettings();
+ if(!g.user||!g.repo||!g.token){setStatus("Enter username, repository and token first.");return}
+ saveGithubSettings();
+ setStatus("Saving progress to GitHub...");
+ try{
+  const url=`https://api.github.com/repos/${encodeURIComponent(g.user)}/${encodeURIComponent(g.repo)}/contents/progress.json`;
+  const get=await fetch(url+`?ref=${encodeURIComponent(g.branch)}`,{headers:headers(g)});
+  let sha=null;
+  if(get.ok) sha=(await get.json()).sha;
+  else if(get.status!==404) throw new Error(await get.text());
+
+  const body={
+   message:"Update interview preparation progress",
+   content:utf8ToBase64(JSON.stringify(progressOnly(),null,2)),
+   branch:g.branch
+  };
+  if(sha) body.sha=sha;
+
+  const put=await fetch(url,{method:"PUT",headers:headers(g),body:JSON.stringify(body)});
+  if(!put.ok)throw new Error(await put.text());
+  setStatus("✅ Progress saved to GitHub.");
+ }catch(e){setStatus("❌ Push failed: "+e.message.slice(0,180))}
+}
+function resetAll(){if(confirm("Reset ALL progress?")){localStorage.removeItem("amexOS");location.reload()}}
+restoreGithubSettings();
+render();
+</script>
+</body>
+</html>
